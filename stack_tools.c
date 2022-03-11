@@ -71,4 +71,3 @@ int	ind_max(t_stack **stack)
 	}
 	return (ind);
 }
-

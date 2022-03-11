@@ -24,7 +24,6 @@ void	push(t_stack **stk_src, t_stack **stk_dest)
 	free(tmp);
 }
 
-
 void	r_stack(t_stack **stack)
 {
 	int		first;

@@ -70,16 +70,16 @@ t_stack	*stk_maker(char **av)
 	return (stack);
 }
 
-int    sort_checker(t_stack *stack)
+int	sort_checker(t_stack *stack)
 {
-    while (stack->next)
-    {
-        if (stack->content < stack->next->content)
-            stack = stack->next;
-        else
-            return (0);
-    }
-    return (1);
+	while (stack->next)
+	{
+		if (stack->content < stack->next->content)
+			stack = stack->next;
+		else
+			return (0);
+	}
+	return (1);
 }
 
 int	main(int ac, char **av)
@@ -103,4 +103,4 @@ int	main(int ac, char **av)
 	print_stack(&stack_a);
 	printf("---------------\n");
 	print_op(&op);
-} 
+}
