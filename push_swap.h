@@ -38,9 +38,10 @@ int		ind_max(t_stack **stack);
 void	sort_3(t_stack **stack_a, t_stack **stack_b, t_op **op);
 void	push(t_stack **stk_src, t_stack **stk_dest);
 int		up_or_down(int i_min, t_stack **stack_a);
-void	push_min_a(int i_min, t_stack **stack_a, t_stack **stack_b, t_op **op);
-void	push_min_b(int i_min, t_stack **stack_a, t_stack **stack_b, t_op **op);
-void	push_max_a(int i_max, t_stack **stack_a, t_stack **stack_b, t_op **op);
-void	push_max_b(int i_max, t_stack **stack_a, t_stack **stack_b, t_op **op);
+void	big_sorter(t_stack **stack_a, t_stack **stack_b, t_op **op);
+int get_val(t_stack **stack, int ind);
+int get_ind(t_stack **stack, int val);
+void make_on_top_a(int ind, t_stack **stack_a, t_stack **stack_b, t_op **op);
+void make_on_top_b(int ind, t_stack **stack_a, t_stack **stack_b, t_op **op);
 
 #endif

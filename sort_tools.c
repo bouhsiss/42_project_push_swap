@@ -1,68 +1,78 @@
 #include"push_swap.h"
 
-int	up_or_down(int i_min, t_stack **stack_a)
+int	up_or_down(int val, t_stack **stack_a)
 {
 	int	size;
 
 	size = ft_lstsize((*stack_a));
-	if (i_min <= (size / 2))
+	if (val <= (size / 2))
 		return (1);
 	else
 		return (-1);
 }
 
-void	push_min_a(int i_min, t_stack **stack_a, t_stack **stack_b, t_op **op)
+int get_val(t_stack **stack, int ind)
 {
-	if (up_or_down(i_min, stack_a) == 1)
+	t_stack *tmp;
+	int content;
+
+	tmp = (*stack);
+	while(ind)
 	{
-		while (ind_min(stack_a) != 1)
+		content = tmp->content;
+		tmp = tmp->next;
+		ind--;
+	}
+	return(content);
+}
+
+int get_ind(t_stack **stack, int val)
+{
+	t_stack *tmp;
+	int ind;
+
+	tmp = (*stack);
+	ind = 1;
+	while(tmp)
+	{
+		if(tmp->content == val)
+			return(ind);
+		tmp = tmp->next;
+		ind++;
+	}
+	return(-1);
+}
+
+void make_on_top_a(int ind, t_stack **stack_a, t_stack **stack_b, t_op **op)
+{
+	int val;
+
+	val = get_val(stack_a, ind);
+	if (up_or_down(ind, stack_a) == 1)
+	{
+		while (get_ind(stack_a, val) != 1)
 			pre_execute("ra", stack_a, stack_b, op);
 	}
-	if (up_or_down(i_min, stack_a) == -1)
+	if (up_or_down(ind, stack_a) == -1)
 	{
-		while (ind_min(stack_a) != 1)
+		while (get_ind(stack_a, val) != 1)
 			pre_execute("rra", stack_a, stack_b, op);
 	}
 }
 
-void	push_max_a(int i_max, t_stack **stack_a, t_stack **stack_b, t_op **op)
+void make_on_top_b(int ind, t_stack **stack_a, t_stack **stack_b, t_op **op)
 {
-	if (up_or_down(i_max, stack_a) == 1)
+	int val;
+
+	val = get_val(stack_b, ind);
+	if (up_or_down(ind, stack_b) == 1)
 	{
-		while (ind_max(stack_a) != 1)
+		while (get_ind(stack_b, val) != 1)
 			pre_execute("ra", stack_a, stack_b, op);
 	}
-	if (up_or_down(i_max, stack_a) == -1)
+	if (up_or_down(ind, stack_b) == -1)
 	{
-		while (ind_max(stack_a) != 1)
+		while (get_ind(stack_b, val) != 1)
 			pre_execute("rra", stack_a, stack_b, op);
-	}
-}
-
-void	push_min_b(int i_min, t_stack **stack_a, t_stack **stack_b, t_op **op)
-{
-	if (up_or_down(i_min, stack_b) == 1)
-	{
-		while (ind_min(stack_b) != 1)
-			pre_execute("rb", stack_a, stack_b, op);
-	}
-	if (up_or_down(i_min, stack_b) == -1)
-	{
-		while (ind_min(stack_b) != 1)
-			pre_execute("rrb", stack_a, stack_b, op);
-	}
-}
-
-void	push_max_b(int i_max, t_stack **stack_a, t_stack **stack_b, t_op **op)
-{
-	if (up_or_down(i_max, stack_b) == 1)
-	{
-		while (ind_max(stack_b) != 1)
-			pre_execute("rb", stack_a, stack_b, op);
-	}
-	if (up_or_down(i_max, stack_b) == -1)
-	{
-		while (ind_max(stack_b) != 1)
-			pre_execute("rrb", stack_a, stack_b, op);
 	}
 }

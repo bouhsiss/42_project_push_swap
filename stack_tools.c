@@ -7,7 +7,7 @@ void	print_stack(t_stack **stack)
 	tmp = *stack;
 	while ((tmp))
 	{
-		printf("%d\n", tmp->content);
+		printf("---- %d\n", tmp->content);
 		tmp = tmp->next;
 	}
 }

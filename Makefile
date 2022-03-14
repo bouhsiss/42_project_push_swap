@@ -1,7 +1,8 @@
 NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
-SRCS = actions.c lst_tools.c stack_tools.c push_swap.c op_tools.c op_lst_tools.c sort_tools.c small_sorter.c
+SRCS = actions.c lst_tools.c stack_tools.c push_swap.c op_tools.c op_lst_tools.c sort_tools.c small_sorter.c \
+		big_sorter.c
 OBJS = $(SRCS:.c=.o)
 
 %.o : %.c

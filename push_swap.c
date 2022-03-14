@@ -95,12 +95,12 @@ int	main(int ac, char **av)
 	stack_a = stk_maker(av);
 	if (stack_a && sort_checker(stack_a) == 0)
 	{
-		if (ac >= 3 && ac <= 10)
+		if (ac >= 3 && ac <= 11)
 			small_sorter(&stack_a, &stack_b, &op);
-		if (ac >= 10 && ac <= 100)
-			big_sorter(&stack_a, &stack_b, &op);
+		// if (ac >= 10 && ac <= 100)
+		// 	big_sorter(&stack_a, &stack_b, &op);
 	}
 	print_stack(&stack_a);
-	printf("---------------\n");
-	print_op(&op);
+	// printf("---------------\n");
+	// print_op(&op);
 }
