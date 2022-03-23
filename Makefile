@@ -7,7 +7,11 @@ SRCS = actions.c lst_tools.c stack_tools.c push_swap.c execution_tools.c op_lst_
 		big_sorter.c err_check.c search_tool.c
 OBJS = $(SRCS:.c=.o)
 
+BONUS_NAME = checker
+BONUS = actions.c lst_tools.c stack_tools.c execution_tools.c op_lst_tools.c sort_tools.c small_sorter.c \
+		big_sorter.c err_check.c search_tool.c checker.c 
 
+BONUS_O = $(BONUS:.c=.o) 
 
 
 %.o : %.c
@@ -20,6 +24,12 @@ $(LIB) :
 $(NAME) : $(LIB)
 	$(CC) $(CFLAGS) $(SRCS) $(LIB) -o $(NAME)
 	@echo "\n====== $(NAME) compiling finished ======"
+	@echo "==========================================\n"
+
+bonus : $(BONUS_O) $(LIB)
+	$(CC) $(CFLAGS) $(SRCS) $(LIB) -o $(NAME)
+	$(CC) $(CFLAGS) $(BONUS) -o $(BONUS_NAME)
+	@echo "\n====== $(BONUS_NAME) compiling finished ======"
 	@echo "==========================================\n"
 
 

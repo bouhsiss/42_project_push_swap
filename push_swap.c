@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:13:12 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/03/22 17:36:20 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/03/23 18:41:18 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,6 @@ int	main(int ac, char **av)
 		if (ac >= 10 && ac <= 600)
 			big_sorter(&stack_a, &stack_b, &op);
 	}
-	print_stack(&stack_a);
-	// print_op(&op);
+	// print_stack(&stack_a);
+	print_op(&op);
 }

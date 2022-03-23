@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:14:07 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/03/23 17:35:22 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/03/23 19:46:50 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct t_op
 	struct t_op	*next;
 }t_op;
 
+char	*get_next_line(int fd);
 int		digit_checker(char *nb);
 int		dupchecker(char **av);
 int		sort_checker(t_stack *stack);
@@ -57,5 +58,6 @@ void	make_on_top_b(int ind, t_stack **stack_a, t_stack **stack_b, t_op **op);
 int		how_many_nbs(t_stack **stack, int min_range, int sz);
 int		*check_small(int min_range, t_stack **stack_a, int sz);
 int		nbs_search(int nbs, t_stack **stack);
+void	execute_op(char *action, t_stack **stack_a, t_stack **stack_b);
 
 #endif
