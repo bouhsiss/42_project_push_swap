@@ -1,80 +1,73 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   big_sorter.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/19 16:08:28 by hbouhsis          #+#    #+#             */
+/*   Updated: 2022/03/19 16:44:20 by hbouhsis         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"push_swap.h"
 
-int chunk_size(t_stack **stack, int mid)
+void	push_chunks(int *nbs, t_stack **stack_a, t_stack **stack_b, t_op **op)
 {
-	int i;
-	t_stack *tmp;
+	t_stack	*tmp;
+	int		i;
 
 	i = 0;
-	tmp = (*stack);
-	while(tmp)
-	{
-		if (tmp->content <= mid)
-			i++;
-		tmp = tmp->next;
-	}
-	return(i);
-}
-
-int *check_small(int mid, t_stack **stack_a)
-{
-	t_stack *tmp;
-	int *nbs;
-	int sz;
-	int i;
-
-	i=0;
-	sz = chunk_size(stack_a, mid);
-	nbs = malloc(sz*sizeof(int));
 	tmp = (*stack_a);
-	while(tmp)
+	while (tmp)
 	{
-		if (tmp->content <= mid)
+		if (nbs_search(nbs[i], stack_a))
 		{
-			nbs[i] = tmp->content;
-			i++;
-		}
-		tmp = tmp->next;
-	}
-	nbs[i] = '\0';
-	return(nbs);
-}
-
-void push_chunks(int nbs, t_stack **stack_a, t_stack **stack_b, t_op **op)
-{
-	t_stack *tmp;
-
-	tmp = (*stack_a);
-	while(tmp)
-	{
-		if(nbs == tmp->content)
-		{
-			make_on_top_a(get_ind(stack_a, nbs), stack_a, stack_b, op);
+			make_on_top_a(get_ind(stack_a, nbs[i]), stack_a, stack_b, op);
+			tmp = tmp->next;
 			pre_execute("pb", stack_a, stack_b, op);
+			i++;
+			continue ;
 		}
-		tmp = tmp->next;
+			tmp = tmp->next;
 	}
+}
+
+int	chunk_sz(int sz)
+{
+	if (sz <= 100)
+		return (20);
+	if (sz > 100 && sz <= 200)
+		return (25);
+	if (sz > 200 && sz <= 300)
+		return (35);
+	if (sz > 300 && sz <= 400)
+		return (40);
+	if (sz > 400 && sz <= 500)
+		return (45);
+	return (50);
 }
 
 void	big_sorter(t_stack **stack_a, t_stack **stack_b, t_op **op)
 {
-	int mid;
-	int *nbs;
-	int sz;
-	int i;
+	int	*nbs;
+	int	range;
+	int	sz;
+	int	size;
 
-	while(ft_lstsize((*stack_a)) > 2)
+	range = 0;
+	size = 0;
+	size = ft_lstsize((*stack_a));
+	sz = chunk_sz(ft_lstsize(*stack_a));
+	while (ft_lstsize((*stack_a)) > 3)
 	{
-		i = 0;
-		mid = (get_val(stack_a, ind_max(stack_a)) + get_val(stack_a, ind_min(stack_a)))/2;
-		nbs = check_small(mid, stack_a);
-		sz = chunk_size(stack_a, mid);
-		while (i<sz)
-		{
-			push_chunks(nbs[i], stack_a, stack_b, op);
-			i++;
-		}
+		nbs = check_small(range, stack_a, sz);
+		push_chunks(nbs, stack_a, stack_b, op);
+		range = range + sz;
+	}
+	while ((*stack_b))
+	{
+		make_on_top_b(ind_max(stack_b), stack_a, stack_b, op);
+		pre_execute("pa", stack_a, stack_b, op);
 	}
 }
-
-//check if numbers are smaller than mid and push them to stk_b

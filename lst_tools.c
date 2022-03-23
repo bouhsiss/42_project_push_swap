@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lst_tools.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/19 16:11:18 by hbouhsis          #+#    #+#             */
+/*   Updated: 2022/03/22 15:50:46 by hbouhsis         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"push_swap.h"
 
 t_stack	*ft_lstlast(t_stack *lst)
@@ -59,43 +71,4 @@ void	ft_lstadd_front(t_stack **lst, t_stack *new)
 		return ;
 	new->next = *lst;
 	*lst = new;
-}
-
-int	ft_atoi(char *str)
-{
-	unsigned long	n;
-	int				sign;
-
-	n = 0;
-	sign = 1;
-	while (*str == ' ' || *str == '\t' || *str == '\r'
-		|| *str == '\n' || *str == '\v' || *str == '\f')
-		str++;
-	if (*str == '-')
-	{
-		sign *= -1;
-		str++;
-	}
-	else if (*str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
-	{
-		n = n * 10 + (*str - 48);
-		if (n > 9223372036854775807 && sign == 1)
-			return (-1);
-		if (n >= 9223372036854775807 && sign == -1)
-			return (0);
-		str++;
-	}
-	return (n * sign);
-}
-
-int	ft_strcmp(char *s1, char *s2)
-{
-	size_t				i;
-
-	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i])
-		i++;
-	return (s1[i] - s2[i]);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_tools.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/19 16:20:34 by hbouhsis          #+#    #+#             */
+/*   Updated: 2022/03/22 17:06:31 by hbouhsis         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"push_swap.h"
 
 void	print_stack(t_stack **stack)
@@ -7,7 +19,8 @@ void	print_stack(t_stack **stack)
 	tmp = *stack;
 	while ((tmp))
 	{
-		printf("---- %d\n", tmp->content);
+		ft_putnbr_fd(tmp->content, 1);
+		ft_putstr_fd("\n", 1);
 		tmp = tmp->next;
 	}
 }
@@ -19,7 +32,8 @@ void	print_op(t_op **op)
 	tmp = *op;
 	while ((tmp))
 	{
-		printf("%s\n", tmp->operation);
+		ft_putstr_fd(tmp->operation, 1);
+		ft_putstr_fd("\n", 1);
 		tmp = tmp->next;
 	}
 }
@@ -57,7 +71,7 @@ int	ind_max(t_stack **stack)
 
 	i = 1;
 	ind = i;
-	tmp = *stack;
+	tmp = (*stack);
 	max = tmp->content;
 	while (tmp)
 	{
