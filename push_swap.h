@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:14:07 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/03/22 17:02:05 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/03/23 17:35:22 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ typedef struct t_op
 	struct t_op	*next;
 }t_op;
 
-char	**ft_split(char *s, char c);
 int		digit_checker(char *nb);
 int		dupchecker(char **av);
 int		sort_checker(t_stack *stack);

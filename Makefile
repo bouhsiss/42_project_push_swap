@@ -4,7 +4,7 @@ LIB = libft.a
 LIB_DIR = libft/
 CFLAGS = -Wall -Wextra -Werror -g
 SRCS = actions.c lst_tools.c stack_tools.c push_swap.c execution_tools.c op_lst_tools.c sort_tools.c small_sorter.c \
-		big_sorter.c err_check.c search_tool.c ft_split.c
+		big_sorter.c err_check.c search_tool.c
 OBJS = $(SRCS:.c=.o)
 
 
