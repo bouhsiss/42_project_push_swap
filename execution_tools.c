@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_tools.c                                         :+:      :+:    :+:   */
+/*   execution_tools.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbouhsis <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:12:08 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/03/19 16:12:09 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/03/24 17:04:42 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	exec_extended(char *action, t_stack **stack_a, t_stack **stack_b)
 
 void	execute_op(char *action, t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_strcmp("sa", action) == 0)
+	if (strcmp("sa", action) == 0)
 		swap(stack_a);
 	else if (ft_strcmp("sb", action) == 0)
 		swap(stack_b);

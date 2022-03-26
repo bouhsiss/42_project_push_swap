@@ -1,49 +1,44 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/26 11:45:44 by hbouhsis          #+#    #+#             */
+/*   Updated: 2022/03/26 15:52:25 by hbouhsis         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"push_swap.h"
 
-t_stack	*stk_maker(int ac, char **av)
+int	main(int ac, char **av)
 {
+	char	*op[10000];
 	int		i;
-	t_stack	*stack;
-	char **arr;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
-	i = 1;
-	stack = NULL;
-	if (ac == 2)
+	i = 0;
+	if (stk_maker(ac, av) != 0 && ac > 1)
 	{
-		arr = ft_split(av[1], ' ');
-		i=0;
-	}
-	else
-		arr = av;
-	if (dupchecker(arr) == 0)
-	{
-		printf("duplicates");
-		return (0);
-	}
-	while (arr[i] != 0)
-	{
-		if (digit_checker(arr[i]) != 0)
-			ft_lstadd_back(&stack, ft_lstnew(ft_atoi(arr[i])));
-		else
+		stack_a = stk_maker(ac, av);
+		op[i] = get_next_line(0);
+		while (op[i] != NULL)
 		{
-			printf("ERROR");
-		
-			stack = NULL;
-			return (stack);
+			op[i][strlen(op[i]) - 1] = '\0';
+			i++;
+			op[i] = get_next_line(0);
 		}
-		i++;
+		i = 0;
+		while (op[i])
+		{
+			execute_op(op[i], &stack_a, &stack_b);
+			i++;
+		}
+		if (sort_checker(&stack_a))
+			printf("OK");
+		else
+			printf("KO");
 	}
-	return (stack);
-}
-
-int main(int ac, char **av)
-{
-	char *op[10000];
-	int i = 0;
-	t_stack *stack_a;
-	t_stack *stack_b;
-
-	while((op[i] = get_next_line(0)) != NULL)
-		i++;
-	op[i] = NULL;
 }

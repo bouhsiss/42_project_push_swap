@@ -2,14 +2,14 @@ NAME = push_swap
 CC = gcc
 LIB = libft.a
 LIB_DIR = libft/
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 SRCS = actions.c lst_tools.c stack_tools.c push_swap.c execution_tools.c op_lst_tools.c sort_tools.c small_sorter.c \
 		big_sorter.c err_check.c search_tool.c
 OBJS = $(SRCS:.c=.o)
 
 BONUS_NAME = checker
 BONUS = actions.c lst_tools.c stack_tools.c execution_tools.c op_lst_tools.c sort_tools.c small_sorter.c \
-		big_sorter.c err_check.c search_tool.c checker.c 
+		big_sorter.c err_check.c search_tool.c checker.c get_next_line.c
 
 BONUS_O = $(BONUS:.c=.o) 
 
@@ -28,7 +28,7 @@ $(NAME) : $(LIB)
 
 bonus : $(BONUS_O) $(LIB)
 	$(CC) $(CFLAGS) $(SRCS) $(LIB) -o $(NAME)
-	$(CC) $(CFLAGS) $(BONUS) -o $(BONUS_NAME)
+	$(CC) $(CFLAGS) $(BONUS) $(LIB) -o $(BONUS_NAME)
 	@echo "\n====== $(BONUS_NAME) compiling finished ======"
 	@echo "==========================================\n"
 
@@ -41,10 +41,11 @@ clean :
 	@echo "===================================\n"
 
 fclean : clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(BONUS_O) $(BONUS_NAME)
 	rm -f $(LIB)
 	make fclean -C $(LIB_DIR) --silent
 	rm -rf $(NAME).dSYM
+	rm -rf $(BONUS_NAME).dSYM
 	@echo "\n====== binary files removed ======="
 	@echo "=====================================\n"
 

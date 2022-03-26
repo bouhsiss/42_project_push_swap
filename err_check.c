@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:28:33 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/03/22 15:17:15 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/03/26 15:26:54 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,15 @@ int	dupchecker(char **av)
 	return (1);
 }
 
-int	sort_checker(t_stack *stack)
+int	sort_checker(t_stack **stack)
 {
-	while (stack->next)
+	t_stack *tmp;
+
+	tmp = (*stack);
+	while (tmp->next)
 	{
-		if (stack->content < stack->next->content)
-			stack = stack->next;
+		if (tmp->content < tmp->next->content)
+			tmp = tmp->next;
 		else
 			return (0);
 	}
