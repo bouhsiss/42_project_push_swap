@@ -2,14 +2,14 @@ NAME = push_swap
 CC = gcc
 LIB = libft.a
 LIB_DIR = libft/
-CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -g
 SRCS = actions.c lst_tools.c stack_tools.c push_swap.c execution_tools.c op_lst_tools.c sort_tools.c small_sorter.c \
-		big_sorter.c err_check.c search_tool.c
+		big_sorter.c err_check.c search_tool.c parser.c
 OBJS = $(SRCS:.c=.o)
 
 BONUS_NAME = checker
 BONUS = actions.c lst_tools.c stack_tools.c execution_tools.c op_lst_tools.c sort_tools.c small_sorter.c \
-		big_sorter.c err_check.c search_tool.c checker.c get_next_line.c
+		big_sorter.c err_check.c search_tool.c checker.c get_next_line.c parser.c
 
 BONUS_O = $(BONUS:.c=.o) 
 
@@ -21,7 +21,7 @@ $(LIB) :
 	make -C $(LIB_DIR) --silent
 	cp libft/$(LIB) ./
 
-$(NAME) : $(LIB)
+$(NAME) : $(OBJS) $(LIB)
 	$(CC) $(CFLAGS) $(SRCS) $(LIB) -o $(NAME)
 	@echo "\n====== $(NAME) compiling finished ======"
 	@echo "==========================================\n"
