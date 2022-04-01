@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:13:12 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/03/28 18:24:41 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/01 13:22:44 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ int	main(int ac, char **av)
 		if (size >= 10 && size <= 600)
 			big_sorter(&stack_a, &stack_b, &op);
 	}
+	// print_stack(&stack_a);
 	print_op(&op);
 }

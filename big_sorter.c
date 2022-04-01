@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:08:28 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/03/28 18:10:06 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/01 14:31:38 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,38 +33,36 @@ void	push_chunks(int *nbs, t_stack **stack_a, t_stack **stack_b, t_op **op)
 	}
 }
 
-int	chunk_sz(int sz)
+int    chunk_sz(int size)
 {
-	if (sz < 100)
-		return (15);
-	if (sz >= 100 && sz < 200)
-		return (20);
-	if (sz >= 200 && sz < 300)
-		return (30);
-	if (sz >= 300 && sz < 400)
-		return (35);
-	if (sz >= 400 && sz < 500)
-		return (40);
-	return (45);
+    if (size <= 30)
+        return (size / 2);
+    else if (size <= 80)
+        return (size / 3);
+    else if (size <= 150)
+        return (20);
+    else if (size <= 250)
+        return (25);
+    else if (size <= 300)
+        return (30);
+    else if (size <= 400)
+        return (40);
+    return (50);
 }
 
 void	big_sorter(t_stack **stack_a, t_stack **stack_b, t_op **op)
 {
 	int	*nbs;
-	int	range;
 	int	sz;
-	int	size;
 
-	range = 0;
-	size = 0;
-	size = ft_lstsize((*stack_a));
-	while (ft_lstsize((*stack_a)))
+
+	while (ft_lstsize((*stack_a)) >= 10)
 	{	
 		sz = chunk_sz(ft_lstsize(*stack_a));
-		nbs = check_small(range, stack_a, sz);
+		nbs = check_small(stack_a, sz);
 		push_chunks(nbs, stack_a, stack_b, op);
-		range = range + sz;
 	}
+	small_sorter(stack_a, stack_b, op);
 	while ((*stack_b))
 	{
 		make_on_top_b(ind_max(stack_b), stack_a, stack_b, op);

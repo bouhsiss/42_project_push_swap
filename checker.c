@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 11:45:44 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/03/26 18:37:58 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/01 14:41:17 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@ void	checker_exec(char **op, t_stack **stack_a, t_stack **stack_b)
 	i = 0;
 	while (op[i])
 	{
-		execute_op(op[i], stack_a, stack_b);
+		if(execute_op(op[i], stack_a, stack_b) == 0)
+		{
+			ft_putstr_fd("Error", 2);
+			exit(0);
+		}
 		i++;
 	}
 	if (sort_checker(stack_a))
