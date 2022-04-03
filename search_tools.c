@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:34:34 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/02 19:44:02 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/03 22:54:00 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,4 @@ int	*check_small(t_stack **stack_a, int sz)
 		tmp = tmp->next;
 	}
 	return (nbs);
-}
-
-int	nbs_search(int nbs, t_stack **stack)
-{
-	t_stack	*tmp;
-
-	tmp = (*stack);
-	while (tmp)
-	{
-		if (nbs == tmp->content)
-			return (1);
-		tmp = tmp->next;
-	}
-	return (0);
 }

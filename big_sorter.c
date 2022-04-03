@@ -6,32 +6,11 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:08:28 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/01 17:24:58 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/03 23:02:13 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
-
-void	push_chunks(int *nbs, t_stack **stack_a, t_stack **stack_b, t_op **op)
-{
-	t_stack	*tmp;
-	int		i;
-
-	i = 0;
-	tmp = (*stack_a);
-	while (tmp)
-	{
-		if (nbs_search(nbs[i], stack_a))
-		{
-			make_on_top_a(get_ind(stack_a, nbs[i]), stack_a, stack_b, op);
-			tmp = tmp->next;
-			pre_execute("pb", stack_a, stack_b, op);
-			i++;
-			continue ;
-		}
-			tmp = tmp->next;
-	}
-}
 
 int	chunk_sz(int size)
 {
@@ -44,10 +23,29 @@ int	chunk_sz(int size)
 	else if (size > 150 && size <= 250)
 		return (25);
 	else if (size > 250 && size <= 300)
-		return (30);
-	else if (size > 300 && size <= 400)
 		return (40);
-	return (50);
+	else if (size > 300 && size <= 400)
+		return (50);
+	return (60);
+}
+
+void	push_chunks(int *nbs, t_stack **stack_a, t_stack **stack_b, t_op **op)
+{
+	t_stack	*tmp;
+	int		sz;
+	int		i;
+
+	i = 0;
+	tmp = (*stack_a);
+	sz = chunk_sz(ft_lstsize(tmp));
+	while (sz)
+	{
+		make_on_top_a(get_ind(stack_a, nbs[i]), stack_a, stack_b, op);
+		tmp = tmp->next;
+		pre_execute("pb", stack_a, stack_b, op);
+		i++;
+		sz--;
+	}
 }
 
 void	big_sorter(t_stack **stack_a, t_stack **stack_b, t_op **op)

@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 17:47:59 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/03 00:30:14 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/03 20:55:15 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,25 @@
 
 t_stack	*constructor(char **arr, int i)
 {
-	t_stack			*stack;
+	t_stack	*stack;
+	long	content;
 
 	stack = NULL;
 	while (arr[i] != 0)
 	{
+		content = ft_atoi(arr[i]);
+		if (content == -1 && (ft_strcmp("-1", arr[i]) != 0))
+		{
+			ft_putstr_fd("Error", 2);
+			exit(0);
+		}
 		if (digit_checker(arr[i]) != 0)
-			ft_lstadd_back(&stack, ft_lstnew(ft_atoi(arr[i])));
+			ft_lstadd_back(&stack, ft_lstnew(content));
 		else
 		{
 			ft_putstr_fd("Error\n", 2);
 			stack = NULL;
-			return (0);
+			exit(0);
 		}
 		i++;
 	}
