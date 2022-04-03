@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:14:07 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/01 14:41:52 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/02 17:08:36 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	make_on_top_a(int ind, t_stack **stack_a, t_stack **stack_b, t_op **op);
 void	make_on_top_b(int ind, t_stack **stack_a, t_stack **stack_b, t_op **op);
 int		*check_small(t_stack **stack_a, int sz);
 int		nbs_search(int nbs, t_stack **stack);
-int		execute_op(char *action, t_stack **stack_a, t_stack **stack_b);
+void	execute_op(char *action, t_stack **stack_a, t_stack **stack_b);
 t_stack	*stk_maker(int ac, char **av);
 char	*get_next_line(int fd);
 

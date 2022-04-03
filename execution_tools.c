@@ -6,13 +6,13 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:12:08 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/01 14:42:17 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/02 19:42:23 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-int	exec_extended(char *action, t_stack **stack_a, t_stack **stack_b)
+void	exec_extended(char *action, t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_strcmp("rrr", action) == 0)
 	{
@@ -24,11 +24,13 @@ int	exec_extended(char *action, t_stack **stack_a, t_stack **stack_b)
 	else if (ft_strcmp("pb", action) == 0)
 		push(stack_a, stack_b);
 	else
-		return(0);
-	return(1);
+	{
+		printf("Error");
+		exit(0);
+	}
 }
 
-int	execute_op(char *action, t_stack **stack_a, t_stack **stack_b)
+void	execute_op(char *action, t_stack **stack_a, t_stack **stack_b)
 {
 	if (strcmp("sa", action) == 0)
 		swap(stack_a);
@@ -52,10 +54,11 @@ int	execute_op(char *action, t_stack **stack_a, t_stack **stack_b)
 		revr_stack(stack_a);
 	else if (ft_strcmp("rrb", action) == 0)
 		revr_stack(stack_b);
-	return(exec_extended(action, stack_a, stack_b));
+	else
+		exec_extended(action, stack_a, stack_b);
 }
 
-void pre_execute(char *action, t_stack **a, t_stack **b, t_op **op)
+void	pre_execute(char *action, t_stack **a, t_stack **b, t_op **op)
 {
 	execute_op(action, a, b);
 	ft_opadd_back(op, ft_opnew(action));

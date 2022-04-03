@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   search_tool.c                                      :+:      :+:    :+:   */
+/*   search_tools.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:34:34 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/01 13:28:13 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/02 19:44:02 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-int better_index(t_stack **stack, int content)
+int	better_index(t_stack **stack, int content)
 {
-	int ind;
-	t_stack *tmp;
+	int		ind;
+	t_stack	*tmp;
 
 	ind = 1;
 	tmp = (*stack);
-	while(tmp)
+	while (tmp)
 	{
-		if (tmp->content<content)
+		if (tmp->content < content)
 			ind++;
 		tmp = tmp->next;
 	}
-	return(ind);
+	return (ind);
 }
 
 int	*check_small(t_stack **stack_a, int sz)
@@ -52,6 +52,7 @@ int	*check_small(t_stack **stack_a, int sz)
 int	nbs_search(int nbs, t_stack **stack)
 {
 	t_stack	*tmp;
+
 	tmp = (*stack);
 	while (tmp)
 	{

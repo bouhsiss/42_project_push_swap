@@ -6,18 +6,11 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:28:33 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/03/26 17:39:16 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/02 20:05:47 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
-
-// int	ft_isdigit(int c)
-// {
-// 	if (c >= '0' && c <= '9')
-// 		return (1);
-// 	return (0);
-// }
 
 int	digit_checker(char *nb)
 {

@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 17:47:59 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/03/28 18:20:29 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/03 00:30:14 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack	*constructor(char **arr, int i)
 {
-	t_stack	*stack;
+	t_stack			*stack;
 
 	stack = NULL;
 	while (arr[i] != 0)
