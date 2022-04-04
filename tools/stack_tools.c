@@ -6,11 +6,11 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:20:34 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/03/22 17:06:31 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/03 23:59:40 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"../push_swap.h"
 
 void	print_stack(t_stack **stack)
 {

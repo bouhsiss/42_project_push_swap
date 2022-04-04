@@ -6,11 +6,11 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:28:33 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/02 20:05:47 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/03 23:59:01 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"../push_swap.h"
 
 int	digit_checker(char *nb)
 {

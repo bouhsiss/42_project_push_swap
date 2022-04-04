@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbouhsis <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 11:46:17 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/03/26 11:46:21 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/03 23:58:44 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_find_newline(char *str)
 {

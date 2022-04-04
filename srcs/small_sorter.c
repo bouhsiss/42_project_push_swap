@@ -6,11 +6,11 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:17:21 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/03/19 16:17:57 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/03 23:59:21 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"../push_swap.h"
 
 void	sort_3(t_stack **stack_a, t_stack **stack_b, t_op **op)
 {

@@ -6,11 +6,11 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 11:45:44 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/02 20:02:12 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/03 23:58:40 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"../push_swap.h"
 
 void	checker_exec(char **op, t_stack **stack_a, t_stack **stack_b)
 {

@@ -6,11 +6,11 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:12:08 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/02 19:42:23 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/03 23:58:23 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"../push_swap.h"
 
 void	exec_extended(char *action, t_stack **stack_a, t_stack **stack_b)
 {

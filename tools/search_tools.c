@@ -6,11 +6,11 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:34:34 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/03 22:54:00 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/03 23:59:31 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"../push_swap.h"
 
 int	better_index(t_stack **stack, int content)
 {

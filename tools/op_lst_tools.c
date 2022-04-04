@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   op_lst_tools.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbouhsis <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:11:50 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/03/19 16:11:52 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/03 23:59:28 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"../push_swap.h"
 
 t_op	*ft_opnew(char *content)
 {

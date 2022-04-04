@@ -6,11 +6,11 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:18:56 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/01 16:18:48 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/03 23:59:37 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"../push_swap.h"
 
 int	up_or_down(int val, t_stack **stack_a)
 {

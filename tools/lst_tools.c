@@ -6,11 +6,11 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:11:18 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/03/22 15:50:46 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/03 23:59:25 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"../push_swap.h"
 
 t_stack	*ft_lstlast(t_stack *lst)
 {
