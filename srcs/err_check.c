@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:28:33 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/05 13:17:32 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/06 22:40:06 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,11 @@ int	sort_checker(t_stack **stack)
 	t_stack	*tmp;
 
 	tmp = (*stack);
+	if (!(*stack))
+	{
+		ft_putstr_fd("Error\n", 2);
+		exit(0);		
+	}
 	while (tmp->next)
 	{
 		if (tmp->content < tmp->next->content)
