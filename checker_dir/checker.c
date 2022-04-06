@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 11:45:44 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/03 23:58:40 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/06 21:52:21 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,28 @@ void	checker_exec(char **op, t_stack **stack_a, t_stack **stack_b)
 		execute_op(op[i], stack_a, stack_b);
 		i++;
 	}
-	if (sort_checker(stack_a))
+	if (sort_checker(stack_a) && !(*stack_b))
 		ft_putstr_fd("OK\n", 1);
 	else
 		ft_putstr_fd("KO\n", 1);
+}
+
+int	check_errors(char *op)
+{
+	if (!(ft_strcmp("sa", op)) || !(ft_strcmp("sb", op)))
+		return (1);
+	else if (!(ft_strcmp("ss", op)) || !(ft_strcmp("ra", op)))
+		return (1);
+	else if (!(ft_strcmp("rb", op)) || !(ft_strcmp("rr", op)))
+		return (1);
+	else if (!(ft_strcmp("rra", op)) || !(ft_strcmp("rrb", op)))
+		return (1);
+	else if (!(ft_strcmp("rrr", op)) || !(ft_strcmp("pa", op)))
+		return (1);
+	else if (!(ft_strcmp("pb", op)))
+		return (1);
+	else
+		return (-1);
 }
 
 int	main(int ac, char **av)
@@ -45,6 +63,11 @@ int	main(int ac, char **av)
 		while (op[i] != NULL )
 		{
 			op[i][strlen(op[i]) - 1] = '\0';
+			if (check_errors(op[i]) == -1)
+			{
+				ft_putstr_fd("Error", 2);
+				exit(0);
+			}
 			i++;
 			op[i] = get_next_line(0);
 		}

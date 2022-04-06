@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 17:47:59 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/03 23:59:06 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/06 21:53:03 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,19 @@ t_stack	*constructor(char **arr, int i)
 	return (stack);
 }
 
+void	free_arr(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+}
+
 t_stack	*stk_maker(int ac, char **av)
 {
 	int		i;
@@ -54,11 +67,13 @@ t_stack	*stk_maker(int ac, char **av)
 	}
 	else
 		arr = av;
-	if (dupchecker(arr) == 0)
+	if (dupchecker(arr, i) == 0)
 	{
 		ft_putstr_fd("Error\n", 2);
 		return (0);
 	}
 	stack = constructor(arr, i);
+	if (i == 0)
+		free_arr(arr);
 	return (stack);
 }

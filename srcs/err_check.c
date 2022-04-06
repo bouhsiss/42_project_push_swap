@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:28:33 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/03 23:59:01 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/05 13:17:32 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,10 @@ int	digit_checker(char *nb)
 	return (1);
 }
 
-int	dupchecker(char **av)
+int	dupchecker(char **av, int i)
 {
-	int	i;
 	int	j;
 
-	i = 1;
 	while (av[i])
 	{
 		j = i + 1;

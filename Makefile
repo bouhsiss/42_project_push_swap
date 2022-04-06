@@ -18,18 +18,19 @@ BONUS_NAME = checker
 BONUS = ./srcs/actions.c ./tools/lst_tools.c ./tools/stack_tools.c ./tools/execution_tools.c ./tools/op_lst_tools.c ./tools/sort_tools.c ./srcs/small_sorter.c \
 		./srcs/big_sorter.c ./srcs/err_check.c ./tools/search_tools.c ./checker_dir/checker.c ./checker_dir/get_next_line.c ./srcs/parser.c
 
+all : $(NAME)
 
 $(LIB) :
 	@echo "${GREEN}====================================="
 	make -C $(LIB_DIR) --silent
 	cp libft/$(LIB) ./
 
-$(NAME) : $(LIB)
+$(NAME) : $(LIB) $(SRCS)
 	$(CC) $(CFLAGS) $(SRCS) $(LIB) -o $(NAME)
 	@echo "\n====== $(NAME) compiling finished ======"
 	@echo "==========================================${NC}\n"
 
-bonus : $(LIB)
+bonus : $(LIB) $(BONUS)
 	@echo "${MAGENTA}====================================="
 	$(CC) $(CFLAGS) $(SRCS) $(LIB) -o $(NAME)
 	$(CC) $(CFLAGS) $(BONUS) $(LIB) -o $(BONUS_NAME)
@@ -37,8 +38,7 @@ bonus : $(LIB)
 	@echo "==========================================\n${NC}"
 
 
-all : $(NAME)
-	
+
 clean :
 	@echo "${RED}====================================="
 	rm -f *.o

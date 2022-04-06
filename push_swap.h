@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:14:07 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/02 17:08:36 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/05 13:17:57 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct t_op
 
 char	*get_next_line(int fd);
 int		digit_checker(char *nb);
-int		dupchecker(char **av);
+int		dupchecker(char **av, int i);
 int		sort_checker(t_stack **stack);
 t_stack	*ft_lstlast(t_stack *lst);
 int		ft_lstsize(t_stack *lst);
