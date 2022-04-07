@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:08:28 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/04 00:26:12 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/07 01:37:23 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	push_chunks(int *nbs, t_stack **stack_a, t_stack **stack_b, t_op **op)
 	while (sz)
 	{
 		make_on_top_a(get_ind(stack_a, nbs[i]), stack_a, stack_b, op);
-		tmp = tmp->next;
 		pre_execute("pb", stack_a, stack_b, op);
 		i++;
 		sz--;

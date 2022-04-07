@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 11:46:17 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/04 00:19:33 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/07 01:25:20 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +49,19 @@ char	*ft_calc_line(char *line, char buf)
 
 char	*get_next_line(int fd)
 {
-	int		bytes_count;
+	int		count;
 	char	*line;
 	char	buf;
 
 	if (fd < 0)
 		return (0);
-	bytes_count = 1;
+	count = 1;
 	line = malloc(1);
 	line[0] = '\0';
-	while (ft_find_newline(line) == -1 && bytes_count)
+	while (ft_find_newline(line) == -1 && count)
 	{
-		bytes_count = read(fd, &buf, 1);
-		if (bytes_count <= 0)
+		count = read(fd, &buf, 1);
+		if (count <= 0)
 		{
 			if (!line[0])
 			{

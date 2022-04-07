@@ -6,7 +6,7 @@
 /*   By: hbouhsis <hbouhsis@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:14:07 by hbouhsis          #+#    #+#             */
-/*   Updated: 2022/04/05 13:17:57 by hbouhsis         ###   ########.fr       */
+/*   Updated: 2022/04/07 01:12:47 by hbouhsis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		ind_min(t_stack **stack);
 int		ind_max(t_stack **stack);
 void	sort_3(t_stack **stack_a, t_stack **stack_b, t_op **op);
 void	push(t_stack **stk_src, t_stack **stk_dest);
-int		up_or_down(int i_min, t_stack **stack_a);
+int		up_or_down(int ind, t_stack **stack);
 void	big_sorter(t_stack **stack_a, t_stack **stack_b, t_op **op);
 int		get_val(t_stack **stack, int ind);
 int		get_ind(t_stack **stack, int val);
