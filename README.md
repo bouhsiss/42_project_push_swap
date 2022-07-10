@@ -31,7 +31,7 @@ The last element becomes the first one.<br/>
 The last element becomes the first one.<br/>
 &emsp;-rrr : rra and rrb at the same time.<br/>
 
-## why this project is useful ?
+## why is this project useful ?
 &emsp; - since sorting can often reduce the complexity of a problem, it is an important algorithm in Computer Science. So you’ll have to manipulate various
 types of algorithms and choose the most appropriate solution (out of many) for an optimized data sorting.
 
