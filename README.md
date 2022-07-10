@@ -35,7 +35,7 @@ The last element becomes the first one.<br/>
 &emsp; - since sorting can often reduce the complexity of a problem, it is an important algorithm in Computer Science. So you’ll have to manipulate various
 types of algorithms and choose the most appropriate solution (out of many) for an optimized data sorting.
 
-## Usage
+## Push swap Usage
 clone the repo, execute ```make``` command and then execute ./push_swap followed by (as arguments) the stack ```a``` formatted as a list of (not sorted) integers.
 **the first argument should be a the top of stack**
 
@@ -44,7 +44,7 @@ as an extra feature i implemented a programed named ```./checker``` that check i
 It will wait and read instructions on the standard input, each instruction will
 be followed by ’\n’. Once all the instructions have been read, the program has to
 execute them on the stack received as an argument.
-## Usage
+## Checker Usage
 clone the repo, execute ```make bonus``` command and then execute ```./push_swap [random numbers] | ./checker [same random numbers]``` 
 or ```./checker [random number] ``` and it reads instructions from the standard input <br/>
 _If after executing those instructions, the stack a is actually sorted and the stack b
